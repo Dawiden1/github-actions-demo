@@ -1,0 +1,21 @@
+name: "Multiple jobs workflow parallely and sequentially"
+on: push      #it means a push in any branch 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build step
+        run: echo "A demo build"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test phase
+        run: echo "Running test cases"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build, test] 
+    steps:
+      - name: Deploy the App
+        run: echo "Deploying the app"
