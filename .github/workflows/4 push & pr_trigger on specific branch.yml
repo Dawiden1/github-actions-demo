@@ -1,0 +1,16 @@
+name: 4 push & pr_trigger
+on: 
+    push:
+        branches:
+            - main
+            - develop
+            - 'release/**'
+    pull_request:
+        branches:
+            - main                  # when PR is raised against main branch, it's gonna trigger the workflow
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build step
+        run: echo "A demo build"
