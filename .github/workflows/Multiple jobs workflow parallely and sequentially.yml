@@ -1,4 +1,4 @@
-name: multiple jobs workflow in parallel work
+name: wf name: Multiple jobs workflow parallely and sequentially
 on: workflow_dispatch
 jobs:
   build:
