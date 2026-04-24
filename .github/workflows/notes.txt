@@ -1,0 +1,7 @@
+1. Types of triggers
+  a) event-bases triggers
+  b) manual triggers
+  c) scheduledd triggers
+  d) workflow triggers
+    - push
+    - pull request
