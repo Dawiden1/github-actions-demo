@@ -1,5 +1,5 @@
-name: 2 multiple jobs workflow parallely and sequentially
-on: push      #it means a push in any branch 
+name: 3 push of any branch
+on: push                                    #it means a push in any branch 
 jobs:
   build:
     runs-on: ubuntu-latest
