@@ -1,4 +1,4 @@
-name: Hello World Workflow
+name: 1 first_helloworld_workflow
 
 on:
   workflow_dispatch
