@@ -13,5 +13,6 @@ The elements listed above were used in processes 1–4
     ! Secrets are used for sensitive data
 To create a variable/secret just go to: Repository Settings > Security an quality > Secrets and variables > Actions
 
-3. Action in GitHub Workflow 
-  a) 
+3. Deploying a static Website to an S3 Bucket
+  a) Configure S3 ucket to host a static Website
+  b) Write GitHub Actions workflow to deploy to S3 bucket 
