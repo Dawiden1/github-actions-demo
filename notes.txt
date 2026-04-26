@@ -5,3 +5,12 @@
   d) workflow triggers
     - push
     - pull request
+The elements listed above were used in processes 1–4
+
+
+2. Working with Variables in Workflows
+  a) Variable holds a piece of information (vars can be used in any wf-s across the same repo)
+  b) Variable are used for non sensitive data
+    ! Secrets are used for sensitive data
+
+To create a variable/secret just go to: Repository Settings > Security an quality > Secrets and variables > Actions
