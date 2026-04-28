@@ -19,5 +19,5 @@ jobs:
             - name: Deploy S3 file
               run: |
                 aws s3 sync ./index.html s3://dawidm-github-actions-demo-bucket \
-                --explude "*" \
+                --exclude "*" \
                 --include "index.html"
