@@ -15,4 +15,15 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
 
 3. Deploying a static Website to an S3 Bucket
   a) Configure S3 ucket to host a static Website
+
+  Firstly, i'm creating a S3 bucket as a static website default page as "index.html",
+    making it public, and editing bucket policy letting access to everyone like s3access_policy.json
+
   b) Write GitHub Actions workflow to deploy to S3 bucket 
+  
+  7 static deploy to s3 bucket.yml <- action
+  For this purpose, I need to create an IAM user granting him an AmazonS3FullAccess Policy,
+  and create him a CLI security credentials that allows making changes to S3.
+  By default, ubuntu-latest has installed AWS CLI, so that i don't need to install it explicity.
+  
+
