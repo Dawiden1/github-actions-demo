@@ -18,4 +18,6 @@ jobs:
             #Copy static website code onto S3 bucket 
             - name: Deploy S3 file
               run: |
-                aws s3 sync ./index.html s3://dawidm-github-actions-demo-bucket
+                aws s3 sync ./index.html s3://dawidm-github-actions-demo-bucket \
+                --explude "*" \
+                --include "index.html"
