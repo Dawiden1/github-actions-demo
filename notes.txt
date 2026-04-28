@@ -25,5 +25,10 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
   For this purpose, I need to create an IAM user granting him an AmazonS3FullAccess Policy,
   and create him a CLI security credentials that allows making changes to S3.
   By default, ubuntu-latest has installed AWS CLI, so that i don't need to install it explicity.
-  
+
+  Overall: http://dawidm-github-actions-demo-bucket.s3-website.eu-west-2.amazonaws.com/
+
+4. Environment Variable 
+  a) An environment variable is a key-value pair 
+  b) Used for changing eg. deploy details from DEV to TEST (after completing DEV) and then to PROD   
 

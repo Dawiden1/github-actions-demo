@@ -4,6 +4,8 @@ jobs:
     deployHTMLtoS3:
         runs-on: ubuntu-latest
         steps:
+
+            # It must be included to allow VM access to the repo
             - name: Checkout code from repo 
               uses: actions/checkout@v4
             
