@@ -5,11 +5,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code from repo 
-              uses: action/checkout@v4
+              uses: actions/checkout@v4
             
             # GHA requires permisions to send a HTML code. This action takes some inputs 
             - name: Configure AWS Credentials
-              uses: aws-action/configure-aws-Credentials@v4
+              uses: aws-actions/configure-aws-credentials@v4
               with:
                 aws-access-key-id: ${{ secrets.AWS_SECRET_KEY_ID }}
                 aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
