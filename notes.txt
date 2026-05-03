@@ -32,3 +32,8 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
   a) An environment variable is a key-value pair 
   b) Used for changing eg. deploy details from DEV to TEST (after completing DEV) and then to PROD   
 
+  8 env demo.yml 
+
+5. Using Inputs/Parameters in a Workflow file
+  a) In order to use inputs, the Workflow file must have only manual trigger (workflow_dispatch)
+  
