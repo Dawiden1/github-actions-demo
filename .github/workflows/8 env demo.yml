@@ -10,7 +10,7 @@ jobs:
     env_demo_WORKFLOW_LEVEL:
         runs-on: ubuntu-latest
         steps:
-            - name: Connecting to Env
+            - name: Connecting to Workflow Level ENV
               run: echo "App is connecting to $APP_ENV"
 
     env_demo_JOB_LEVEL:
@@ -18,13 +18,13 @@ jobs:
             APP_ENV: "TEST"
         runs-on: ubuntu-latest
         steps:
-            - name: Connecting to Env
+            - name: Connecting to Job Level ENV
               run: echo "App is connecting to $APP_ENV"
 
     env_demo_STEP_LEVEL:
         runs-on: ubuntu-latest
         steps:
-            - name: Connecting to Env
+            - name: Connecting to Step Level ENV
               env:
                 APP_ENV: "PROD"
               run: echo "App is connecting to $APP_ENV"
@@ -34,7 +34,7 @@ jobs:
         env:
             LEVEL: "JOB > WORKFLOW"
         steps:
-            - name: Connecting to Env
+            - name: Connecting to Env with mixed levels
               env:
                 LEVEL: "STEP > JOB > WORKFLOW"
               run: echo "App is connecting to $LEVEL"
