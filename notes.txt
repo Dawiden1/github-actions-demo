@@ -36,4 +36,4 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
 
 5. Using Inputs/Parameters in a Workflow file
   a) In order to use inputs, the Workflow file must have only manual trigger (workflow_dispatch)
-  
+  b) Input can be put in a drop-down list next to the "Run Workflow" button 
