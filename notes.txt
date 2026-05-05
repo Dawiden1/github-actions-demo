@@ -37,3 +37,16 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
 5. Using Inputs/Parameters in a Workflow file
   a) In order to use inputs, the Workflow file must have only manual trigger (workflow_dispatch)
   b) Input can be put in a drop-down list next to the "Run Workflow" button 
+
+  9 and 10 yml files
+
+6. Understanding Context Variables in GitHub Actions 
+  a) ${{ github.event_name }} - the name of the event that triggered the workflow (e.g., push)
+  b) ${{ github.repository }} - the full name of the repository (e.g., owner/repo)
+  c) ${{ github.ref }} -        the git ref that triggered the workflow (e.g., refs/heads/main)
+  d) ${{ github.actor }} -      the username of the person WHO triggered the workflow
+  e) ${{ github.sha }} -        the commit SHA that triggered the workflow 
+  f) ${{ github.workflow }} -   the name of the workflow file 
+
+  Docs: https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context 
+

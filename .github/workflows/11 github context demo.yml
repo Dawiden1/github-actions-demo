@@ -1,0 +1,21 @@
+name: 11 github context demo
+on: workflow_dispatch
+jobs:
+    context-demo: 
+        runs-on: ubuntu-latest 
+        steps:
+            - name: Use context variables
+              run: |
+                echo "This workflow is triggered by ${{ github.actor }}"
+                echo "The repository name is ${{ github.repository }}"
+                echo "The branch is ${{ github.ref_name }}"
+            
+            - name: Print all variables under github 
+              run: echo "${{ toJson(github) }}"
+
+            - name: Use environment variables 1
+              run: printenv
+
+            - name: Use environment variables 2
+              run: echo "Example of using env variable 'DOLLAR_GITHUB_SHA' is $GITHUB_SHA"
+                
