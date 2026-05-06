@@ -1,12 +1,11 @@
 name: 13 if condition
 on: 
-    push:
-        branches:
-        - main
+    workflow_dispatch:
 
     pull_request:
-        branches:
-        - develop
+        types:
+            - opened
+            - synchronize
 
 jobs:
     job1-basics:
