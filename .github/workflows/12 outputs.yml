@@ -15,7 +15,7 @@ jobs:
 
   job2-source-of-output:
     outputs:
-      version: ${{ steps.step1.outputs.version }}
+      version: ${{ steps.step3.outputs.version }}
     runs-on: ubuntu-latest
     steps:
       - name: Step 3
@@ -29,6 +29,7 @@ jobs:
       - name: Step 4
         run: echo "Deploying with version ${{ needs.job2-source-of-output.outputs.version }}" \
         
+  # for passing value, we need to refer to step "id"
   # must provide property "needs" to make job3 available to work properly
 
 
