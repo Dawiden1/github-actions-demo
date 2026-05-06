@@ -27,9 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step 4
-        run: echo "Deploying with version: ${{ needs.job2-source-of-output.outputs.version }}"
-
-# must provide property "needs" to make job3 available to work properly
+        run: echo "Deploying with version ${{ needs.job2-source-of-output.outputs.version }}" \
+        
+  # must provide property "needs" to make job3 available to work properly
 
 
       
