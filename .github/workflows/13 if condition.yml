@@ -31,3 +31,22 @@ jobs:
               run: |
                 echo "It is triggered by either Dawiden1 or Ned1vad47"
                 echo "Github actor is ${{ github.actor }}"
+
+# More examples of using if conditions on JOB LEVEL
+#    - Run "Build Job" when pull request is raised
+#    - Run "Deploy Job" when commits are pushed to main
+
+    build-job: 
+        if: ${{ github.event_name == 'pull_request' }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: dd
+              run: echo "Build Job"
+
+    deploy-job: 
+        if:  ${{ github.event_name == 'push' }}
+        needs: build-job
+        runs-on: ubuntu-latest
+        steps:
+            - name: dd
+              run: echo "Deploy Job"

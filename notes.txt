@@ -60,4 +60,9 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
   YAML no. 12
 
 8. Using if condition in Workflow
-  a) 
+  a) Using for specified conditions
+  b) Example:
+    - Run "Build Job" when pull request is raised
+    - Run "Deploy Job" when commits are pushed to main
+
+  YAML no. 13
