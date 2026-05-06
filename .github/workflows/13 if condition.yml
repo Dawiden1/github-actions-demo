@@ -5,7 +5,7 @@ on:
         - main
         - develop
 jobs:
-    job1:
+    job1-basics:
         runs-on: ubuntu-latest
         steps:
             - name: Run if branch is main (curly brackets)
@@ -16,5 +16,18 @@ jobs:
               if: github.ref == 'refs/heads/main' 
               run: echo "Running this step"
 
+            - name: Run if branch is main (no curly brackets)
+              if: github.ref_name == 'main' 
+              run: echo "Running this step"
+
             - name: Run this step 
               run: echo "Running this step"
+
+    jo2_with_or_condition:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run for Dawiden1
+              if: github.actor == 'Dawiden1' || github.actor == 'Ned1vad47'
+              run: |
+                echo "It is triggered by either Dawiden1 or Ned1vad47"
+                echo "Github actor is ${{ github.actor }}"
