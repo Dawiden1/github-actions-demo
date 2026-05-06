@@ -1,0 +1,35 @@
+name: 12 outputs
+
+on: push
+
+jobs:
+  job1-handling-within-single-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        id: step1
+        run: echo "version=0.0.1" >> $GITHUB_OUTPUT
+      
+      - name: Step 2 
+        run: echo "This version is ${{ steps.step1.outputs.version }}"
+
+  job2-source-of-output:
+    outputs:
+      version: ${{ steps.step1.outputs.version }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 3
+        id: step3
+        run: echo "version=0.0.2" >> $GITHUB_OUTPUT
+
+  job3-destination-of-output:
+    needs: job2-source-of-output
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 4
+        run: echo "Deploying with version: ${{ needs.job2-source-of-output.outputs.version }}"
+
+# must provide property "needs" to make job3 available to work properly
+
+
+      

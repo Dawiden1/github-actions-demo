@@ -32,13 +32,13 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
   a) An environment variable is a key-value pair 
   b) Used for changing eg. deploy details from DEV to TEST (after completing DEV) and then to PROD   
 
-  8 env demo.yml 
+  YAML no. 8 - env demo.yml 
 
 5. Using Inputs/Parameters in a Workflow file
   a) In order to use inputs, the Workflow file must have only manual trigger (workflow_dispatch)
   b) Input can be put in a drop-down list next to the "Run Workflow" button 
 
-  9 and 10 yml files
+  YAML no. 9 and 10
 
 6. Understanding Context Variables in GitHub Actions 
   a) ${{ github.event_name }} - the name of the event that triggered the workflow (e.g., push)
@@ -50,3 +50,14 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
 
   Docs: https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#github-context 
 
+  YAML no. 11
+
+7. What are outputs in a GitHub Workflow?
+  a) Outputs are values returned by one task whick is used by another task 
+  b) Using outputs we can share data between tasks/steps 
+  c) Sharing data between Jobs
+
+  YAML no. 12
+
+8. Using if condition in Workflow
+  a) 
