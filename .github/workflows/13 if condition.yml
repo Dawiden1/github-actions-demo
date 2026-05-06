@@ -52,5 +52,5 @@ jobs:
         needs: build-job
         runs-on: ubuntu-latest
         steps:
-            - name: gg
+            - name: hh
               run: echo "Deploy Job"
