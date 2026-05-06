@@ -1,0 +1,20 @@
+name: 13 if condition
+on: 
+    push:
+        branches:
+        - main
+        - develop
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run if branch is main (curly brackets)
+              if: ${{ github.ref == 'refs/heads/main' }} 
+              run: echo "Running this step"
+
+            - name: Run if branch is main (no curly brackets)
+              if: github.ref == 'refs/heads/main' 
+              run: echo "Running this step"
+
+            - name: Run this step 
+              run: echo "Running this step"
