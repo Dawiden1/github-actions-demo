@@ -81,3 +81,7 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
   a) It is a similar to standard workflow, but I can call from another workflow
   b) Avoids code duplication
   c) Makes code haighlt maintainable 
+
+  YAML no. 15a & 15b -> we push 15b that calls 15a. In workflow summary, calls greeting job as normally it would run on its own
+
+  Let's see how to configure inputs to reusable workflow
