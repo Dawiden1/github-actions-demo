@@ -3,10 +3,10 @@ on:
     workflow_dispatch:
    
 # two below are used to job3 and job4
-    #pull_request:
-    #    types:
-    #        - opened
-    #        - synchronize
+    pull_request:
+        types:
+            - opened
+            - synchronize
     push:
         branches:
             - main
