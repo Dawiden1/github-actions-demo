@@ -48,7 +48,7 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         runs-on: ubuntu-latest
         steps:
-            - name: dd
+            - name: Building
               run: echo "Build Job"
 
     deploy-job: 
@@ -56,5 +56,5 @@ jobs:
         needs: build-job
         runs-on: ubuntu-latest
         steps:
-            - name: ee
+            - name: Deploying
               run: echo "Deploy Job"
