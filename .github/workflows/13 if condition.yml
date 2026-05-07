@@ -3,10 +3,10 @@ on:
     workflow_dispatch:
    
 # two below are used to job3 and job4
-    pull_request:
-        types:
-            - opened
-            - synchronize
+    #pull_request:
+    #    types:
+    #        - opened
+    #        - synchronize
     push:
         branches:
             - main
@@ -45,7 +45,7 @@ jobs:
 #    - Run "Deploy Job" when commits are pushed to main
 
     build-job: 
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'main'}}
         runs-on: ubuntu-latest
         steps:
             - name: Building
