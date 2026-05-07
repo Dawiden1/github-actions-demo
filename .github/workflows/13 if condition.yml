@@ -57,3 +57,7 @@ jobs:
         steps:
             - name: Deploying
               run: echo "Deploy Job"
+
+# build-job is run in PR
+# deploy-job is run in github actions tab
+# job1 and job2 are run in both situations 
