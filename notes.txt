@@ -66,3 +66,10 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
     - Run "Deploy Job" when commits are pushed to main
 
   YAML no. 13
+
+  Another task for IF conditions using special functions, such as: 
+    startswith, endswith, contains, success, failure
+  Context:  There will be three branches in use:
+  - develop     - deploy the code to development environment
+  - main        - deploy the code to production environment
+  - feature/**  - static code analysis  
