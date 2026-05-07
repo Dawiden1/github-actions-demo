@@ -1,11 +1,16 @@
 name: 13 if condition
 on: 
     workflow_dispatch:
-
+   
+# two below are used to job3 and job4
     pull_request:
         types:
             - opened
             - synchronize
+    push:
+        branches:
+            - main
+
 
 jobs:
     job1-basics:
@@ -47,7 +52,7 @@ jobs:
               run: echo "Build Job"
 
     deploy-job: 
-        if:  ${{ github.event_name == 'push' }}
+        if:  ${{ github.event_name == 'push' && github.ref_name == 'main' }}
         needs: build-job
         runs-on: ubuntu-latest
         steps:
