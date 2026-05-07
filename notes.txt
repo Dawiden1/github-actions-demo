@@ -73,3 +73,11 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
   - develop     - deploy the code to development environment
   - main        - deploy the code to production environment
   - feature/**  - static code analysis  
+  where: feature being deployed to develop then develop to main 
+  
+  YAML no. 14
+
+9. What is reusable workflow
+  a) It is a similar to standard workflow, but I can call from another workflow
+  b) Avoids code duplication
+  c) Makes code haighlt maintainable 

@@ -47,3 +47,8 @@ jobs:
         steps:
             - name: Notify Failure
               run: echo "Failure email sent to the team"  
+
+              
+# git push origin feature/if-example    > feature runs, others skipped & success
+# then merge to base (not main) & merge (no PR triggered WF) > dev runs, others skipped & success 
+# repeat above one but with main being merged by develop branch
