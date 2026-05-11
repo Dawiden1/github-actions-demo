@@ -1,4 +1,4 @@
-name: Kubernetes CI
+name: 16 Kubernetes CI
 on:
     push:
         branches:
