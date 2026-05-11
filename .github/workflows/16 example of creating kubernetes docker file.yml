@@ -30,7 +30,7 @@ jobs:
                 # Update image tag in deployment.yaml
                 yq -i '.spec.template.spec.containers[0].image = "dawiden1/gha-pyapp:'"$SHORT_SHA"'"' ./k8s/pyapp-deployment.yml
             - name: Commit deployment file changes 
-              run |
+              run: |
                 # Github Workflow must be in Read and write permission (Acc > Actions > General)
                 git config user.name "github-actions[bot]"
                 git config user.email "github-actions@noreply"
