@@ -85,3 +85,36 @@ To create a variable/secret just go to: Repository Settings > Security an qualit
   YAML no. 15a & 15b -> we push 15b that calls 15a. In workflow summary, calls greeting job as normally it would run on its own
 
   Let's see how to configure inputs to reusable workflow
+
+10. EKS & ArgoCD Setup
+  a) Setup EKS Cluster with "eksctl"
+  b) Install ArgoCD on the Cluster
+  c) Access ArgoCD Dashboard and login
+
+  ArgoCD - gitops CD tool for kubernetes. That automatically sencs Kubernetes resources from Git repository onto Kubernetes Cluster
+
+  Command to create EKS cluster:
+  eksctl create cluster --name dawiden1-cluster --version 1.30 --region eu-west-1 --nodegroup-name ng-1 --node-type t3.medium --nodes 2 --nodes-min 1 --nodes-max 3
+
+  Creating a separate namespace for ArgoCD:   kubectl create namespace argocd 
+  Inside this namespace, installing ArgoCD:   kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+  Installation of ArgoCD in the namespace:    kubectl get pods -n argocd 
+
+  Now, I want to access ArgoCD web interface. By default, the service created for ArgoCD is cluster IP
+    I want to change cluster IP to load balancer so that I can use this load balancer endpoint
+    to access from the web browser:           kubectl get svc -n argocd
+  
+  Name "arg-cd-server" can be found as a type of ClusterIP connection. to change that,
+    I use the command:                        kubectl edit svc argocd-server -n argocd 
+  
+  Yaml file will open, seek for "type:" row, delete "ClusterIP" and type "LoadBalancer" then save & close 
+    Now, it creates application load balancer in the background. This takes few seconds. That is it.
+
+  After another kubectl get svn -n argocd, I can find a load balancer endpoint in "external-ip" column.
+    Pass this in the browser, and then I can login to default admin account, there login is "admin",
+    then password can be found in:            kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo 
+
+    16 example of creating kubernetes docker file.yml
+
+
+     
